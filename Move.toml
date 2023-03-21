@@ -15,4 +15,4 @@ originmate = "0x92ae744e95056f895f2ffec7c75c9d86d7651ec7"
 git = "git@github.com:ericEnjoy/sui.git"
 subdir = "crates/sui-framework"
 # devnet-0.27.0
-rev = "eric"
+rev = "main"
