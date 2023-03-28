@@ -9,10 +9,11 @@ authors = [
 ]
 
 [addresses]
-originmate = "0x92ae744e95056f895f2ffec7c75c9d86d7651ec7"
+# not published
+originmate = "0x0"
 
 [dependencies.Sui]
-git = "git@github.com:ericEnjoy/sui.git"
-subdir = "crates/sui-framework"
+git = "git@github.com:MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
 # devnet-0.27.0
-rev = "eric"
+rev = "devnet"

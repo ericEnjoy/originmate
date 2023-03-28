@@ -43,7 +43,7 @@ module originmate::linear_vesting {
             start,
             duration
         };
-        if (option::is_some(&clawbacker)) transfer::transfer(ClawbackCapability { id: object::new(ctx), wallet_id: object::id(&wallet) }, option::destroy_some(clawbacker));
+        if (option::is_some(&clawbacker)) transfer::public_transfer(ClawbackCapability { id: object::new(ctx), wallet_id: object::id(&wallet) }, option::destroy_some(clawbacker));
         transfer::share_object(wallet);
     }
 
@@ -104,7 +104,7 @@ module originmate::linear_vesting {
 
     /// @notice Claws back coins to the `recipient` if enabled.
     public entry fun clawback_to<T>(wallet: &mut Wallet<T>, clawback_cap: ClawbackCapability, recipient: address, ctx: &mut TxContext) {
-        transfer::transfer(clawback(wallet, clawback_cap, ctx), recipient)
+        transfer::public_transfer(clawback(wallet, clawback_cap, ctx), recipient)
     }
 
     /// @dev Destroys a clawback capability.
